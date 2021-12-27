@@ -1,0 +1,39 @@
+topics:
+  -
+    topic: /cmd_vel
+    type: geometry_msgs/msg/Twist
+  -
+    topic: /diagnostics
+    type: diagnostic_msgs/msg/DiagnosticArray
+  -
+    topic: /diagnostics_agg
+    type: diagnostic_msgs/msg/DiagnosticArray
+  -
+    topic: /e_stop
+    type: std_msgs/msg/Bool 
+  -
+    topic: /husky_velocity_controller/cmd_vel
+    type: geometry_msgs/msg/Twist
+  - 
+    topic: /husky_velocity_controller/odom
+    type: nav_msgs/msg/Odometry
+  - 
+    topic: /joint_states
+    type: sensor_msgs/msg/JointState
+  -
+    topic: /joy_teleop/cmd_vel
+    type:  geometry_msgs/msg/Twist
+  - 
+    topic: /joy_teleop/joy
+    type: sensor_msgs/msg/Joy
+  -
+    topic: /tf_static
+    type: tf2_msgs/msg/TFMessage
+  - 
+    topic: /tf
+    type: tf2_msgs/msg/TFMessage
+  # Not bridged since its a custom message, hence will require buidling bridge
+  # from source, additionaly all the data is already published in diagnostics 
+  # -
+  #   topic: /status
+  #   type: husky_msgs/HuskyStatus

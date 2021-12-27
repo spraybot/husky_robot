@@ -26,6 +26,8 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <launch>
+    <rosparam command="load" file="$(find husky_base)/config/bridge.yaml" />
+
     <arg name="port" default="$(optenv HUSKY_PORT /dev/prolific)" />
 
     <!-- Husky harware driver -->
@@ -54,4 +56,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <rosparam command="load" file="$(find husky_base)/config/diagnostics.yaml"/>
     </node>
 
+    <node pkg="husky_base" type="parameter_bridge.sh" name="parameter_bridge" output="screen" />
+    
 </launch>
